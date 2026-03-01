@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="./ressources/pictures/spark_image.png" alt="Spark image" width="720" />
+  <img src="./ressources/pictures/spark_banner.png" alt="Spark image" width="720" />
 </p>
 
 <p align="center">
