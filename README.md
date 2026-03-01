@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="./ressources/pictures/spark_logo.jpg" alt="Spark image" width="360" />
+  <img src="./ressources/pictures/spark_logo.jpg" alt="Spark image" width="240" />
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@ It combines conceptual videos, setup references, practical scripts, and communit
 
 ## Track 1: Workshop
 
-## Track 2: Homework
+## Track 2: Project
 
 ## Resources
 
