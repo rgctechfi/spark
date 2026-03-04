@@ -1,1 +1,90 @@
+# Existing local tool file
 .bruin.yml
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter / marimo runtime artifacts
+.ipynb_checkpoints/
+__marimo__/
+
+# UV local/cache artifacts (keep uv.lock tracked)
+.uv/
+.uv-cache/
+uv-cache/
+
+# Spark local artifacts
+spark-warehouse/
+metastore_db/
+derby.log
+spark-events/
+
+# Data files and generated outputs
+data/
+datasets/
+raw/
+processed/
+artifacts/
+outputs/
+tmp/
+workshop/zones/
+workshop/*.csv
+workshop/*.csv.gz
+workshop/*.csv.gz.*
+workshop/*.parquet
+project/*.csv
+project/*.csv.gz
+project/*.parquet
+*.snappy.parquet
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*secret*
+*credential*
+*credentials*
+*.pem
+*.key
+*.p12
+*.pfx
+*.gpg
+
+# Google Cloud credentials/config
+application_default_credentials.json
+*service-account*.json
+*service_account*.json
+*google_credentials*.json
+*gcp*key*.json
+.gcloud/
+.config/gcloud/
