@@ -1,5 +1,5 @@
 <h1 align="center">
-  <span>𝙎𝙥𝙖𝙧𝙠</span>
+  <span>𝘼𝙥𝙖𝙘𝙝𝙚 𝙎𝙥𝙖𝙧𝙠</span>
 </h1>
 
 <p align="center">
