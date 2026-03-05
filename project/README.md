@@ -31,7 +31,7 @@ Pending
 > To install PySpark, follow this [guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/06-batch/setup/pyspark.md).
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q1">
+  <img src="https://img.shields.io/badge/Answer-4.1.1-lightgrey" alt="Answer Q1">
 </p>
 
 ---
@@ -56,7 +56,7 @@ Pending
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q2">
+  <img src="https://img.shields.io/badge/Answer-25MB-lightgreen" alt="Answer Q2">
 </p>
 
 ---
@@ -79,7 +79,7 @@ Pending
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q3">
+  <img src="https://img.shields.io/badge/Answer-162,604-lightgreen" alt="Answer Q3">
 </p>
 
 ---
@@ -100,7 +100,7 @@ Pending
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q4">
+  <img src="https://img.shields.io/badge/Answer-Pending-lightgreen" alt="Answer Q4">
 </p>
 
 ---
@@ -121,7 +121,7 @@ Pending
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q5">
+  <img src="https://img.shields.io/badge/Answer-Pending-lightgreen" alt="Answer Q5">
 </p>
 
 ---
