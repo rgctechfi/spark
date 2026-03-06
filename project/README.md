@@ -23,15 +23,8 @@ What's the output?
 
 Selected answer:
 
-```text
-Pending
-```
-
-> [!NOTE]
-> To install PySpark, follow this [guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/06-batch/setup/pyspark.md).
-
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-4.1.1-lightgrey" alt="Answer Q1">
+  <img src="https://img.shields.io/badge/Answer-4.1.1-lightgreen" alt="Answer Q1">
 </p>
 
 ---
@@ -51,8 +44,8 @@ What is the average parquet file size (files ending in `.parquet`, in MB)?
 
 Selected answer:
 
-```text
-Pending
+```bash
+ls -lah ./data/partitioned/yellow_2025_11_repartitioned
 ```
 
 <p align="center">
@@ -74,8 +67,15 @@ Consider only trips that started on November 15.
 
 Selected answer:
 
-```text
-Pending
+```sql
+spark.sql("""
+SELECT
+    COUNT(1)
+FROM 
+    yellow_2025_11
+WHERE
+    to_date(tpep_pickup_datetime) = '2025-11-15';
+""").show()
 ```
 
 <p align="center">
@@ -95,12 +95,20 @@ What is the length of the longest trip in the dataset (in hours)?
 
 Selected answer:
 
-```text
-Pending
+```sql
+spark.sql("""
+SELECT
+  ROUND(
+    MAX((unix_timestamp(tpep_dropoff_datetime) - unix_timestamp(tpep_pickup_datetime)) / 3600.0),
+    1
+  ) AS longest_trip_hours
+FROM yellow_2025_11
+WHERE tpep_dropoff_datetime >= tpep_pickup_datetime
+""").show()
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgreen" alt="Answer Q4">
+  <img src="https://img.shields.io/badge/Answer-90.6-lightgreen" alt="Answer Q4">
 </p>
 
 ---
@@ -116,12 +124,26 @@ Spark's User Interface dashboard runs on which local port?
 
 Selected answer:
 
-```text
-Pending
+```python
+from pyspark.sql import SparkSession
+
+spark = (
+    SparkSession.builder
+    .master("local[*]")
+    .appName("spark-dashboard-demo")
+    .config("spark.ui.enabled", "true")
+    .config("spark.ui.port", "4040")
+    .config("spark.driver.host", "127.0.0.1")
+    .config("spark.driver.bindAddress", "127.0.0.1")
+    .getOrCreate()
+)
+
+print("Spark UI:", spark.sparkContext.uiWebUrl)
+
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgreen" alt="Answer Q5">
+  <img src="https://img.shields.io/badge/Answer-4040-lightgreen" alt="Answer Q5">
 </p>
 
 ---
@@ -143,56 +165,18 @@ Using lookup data and Yellow November 2025 data, what is the **least frequent** 
 
 Selected answer:
 
-```text
-Pending
+```sql
+spark.sql("""
+SELECT z.Zone, COUNT(*) AS trips
+FROM yellow_2025_11 y
+JOIN taxi_zone_lookup z
+  ON y.PULocationID = z.LocationID
+GROUP BY z.Zone
+ORDER BY trips ASC, z.Zone ASC
+LIMIT 10
+""").show(truncate=False)
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-Pending-lightgrey" alt="Answer Q6">
+  <img src="https://img.shields.io/badge/Answer-Arden Heights and Governor's Island/Ellis Island/Liberty Island-lightgreen" alt="Answer Q6">
 </p>
-
----
-
-## Submitting the Solutions
-
-- Form for submitting: https://courses.datatalks.club/de-zoomcamp-2026/homework/hw6
-- Deadline: See the website
-
-## Learning in Public
-
-We encourage everyone to share what they learned. This is called "learning in public".
-
-Read more about the benefits [here](https://alexeyondata.substack.com/p/benefits-of-learning-in-public-and).
-
-### Example Post for LinkedIn
-
-```text
-Week 6 of Data Engineering Zoomcamp by @DataTalksClub complete.
-
-Just finished Module 6 - Batch Processing with Spark. Learned how to:
-
-- Set up PySpark and create Spark sessions
-- Read and process parquet files at scale
-- Repartition data for better performance
-- Analyze millions of taxi trips with DataFrames
-- Use Spark UI for monitoring jobs
-
-Here's my homework solution: <LINK>
-
-You can sign up here: https://github.com/DataTalksClub/data-engineering-zoomcamp/
-```
-
-### Example Post for Twitter/X
-
-```text
-Module 6 of Data Engineering Zoomcamp done.
-
-- Batch processing with Spark
-- PySpark and DataFrames
-- Parquet file optimization
-- Spark UI on port 4040
-
-My solution: <LINK>
-
-Free course by @DataTalksClub: https://github.com/DataTalksClub/data-engineering-zoomcamp/
-```
